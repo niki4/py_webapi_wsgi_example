@@ -1,7 +1,7 @@
 # py_webapi_wsgi_example
-Simple example of the wsgi-compatible API written on pure Python
+Simple example of the [wsgi](https://www.python.org/dev/peps/pep-0333/)-compatible API web app written on pure Python.
 
-It uses uWSGI built-in server to run the script. 
+It uses [uWSGI](https://github.com/unbit/uwsgi) built-in server to run the script. 
 Of course both the server and the script are for demonstration only and not 
 intended to use in production.
 
@@ -19,7 +19,7 @@ source venv/bin/activate
 ```
 Now you can install some dependencies:
 ```
-sudo pip3 install uwsgi
+pip3 install uwsgi
 ```
 Finally, you're ready to go. Just run the script, which start the uWSGI server with the API app loaded:
 ```

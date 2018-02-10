@@ -71,31 +71,3 @@ class App():
     @staticmethod
     def not_allowed_handler(environ, url_params):
         return 'Not allowed', 405, {}
-
-
-application = App()
-
-
-@application.register_handler('^/cart/$', methods=['GET', 'POST'])
-def cart_url_handler(environ, url_params):
-    return 'Cart page', 200, {}
-
-
-@application.register_handler('^/$')
-def index_url_handler(environ, url_params):
-    return 'Index page', 200, {}
-
-
-@application.register_handler('^/products/$')
-def info_url_handler(environ, url_params):
-    data = [
-        {'title': 'Iphone X', 'price': '50000'},
-        {'title': 'Iphone X+', 'price': '60000'},
-    ]
-    return data, 201, {'X-test-header': '123'}
-
-
-@application.register_handler('^/products/(?P<product_id>\d+)/$')
-def product_info_url_handler(environ, url_params):
-    data = {'title': 'Iphone X', 'price': '50000', 'params': url_params}
-    return data, 200, {}

@@ -24,5 +24,5 @@ def info_url_handler(environ, url_params):
 
 @application.register_handler('^/products/(?P<product_id>\d+)/$')
 def product_info_url_handler(environ, url_params):
-    data = {'title': 'Iphone X', 'price': '50000', 'params': url_params}
+    data = {'title': 'Iphone X', 'price': '50000', 'id': url_params['product_id']}
     return data, 200, {}

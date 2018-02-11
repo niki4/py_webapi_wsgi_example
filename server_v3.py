@@ -9,7 +9,8 @@ class App():
 
     def get_handler(self, environ):
         current_method = environ['REQUEST_METHOD']
-        url = environ['PATH_INFO']
+        url = environ['PATH_INFO'].rstrip('/')
+        print(url)
 
         current_url_handler, allowed_methods, url_params = None, None, None
         for url_regexp, (handler, methods) in self.handlers.items():
